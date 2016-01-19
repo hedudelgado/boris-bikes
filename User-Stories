@@ -1,0 +1,36 @@
+As a person,
+So that I can use a bike,
+I'd like a docking station to release a bike.
+
+As a person,
+So that I can use a good bike,
+I'd like to see if a bike is working
+
+
+nouns
+
+person
+bike
+docking station
+bike
+person
+bike
+bike
+
+verbs
+
+use
+release
+use
+see
+working
+
+OBJECTS                   MESSAGES
+
+Person 					
+Bike                    bikes_available
+Docking Station   		find_a_bike, bike_is_working, release_a_bike 
+
+Person ---> Bike ---> bikes_available ---> bikes_are_working ---> true/false
+
+true --->  Person_gets_a_list_of_working_bikes ---> Person_selects_one ---> bike_is_released ---> person_takes_bike

@@ -1,0 +1,9 @@
+First Error
+
+Unitilized constant: We can not set a variable equal to a constant that does not exist.
+
+Path: /Users/reissjohnson/.rvm/rubies/ruby-2.2.1/bin/irb
+
+Error line: 11
+
+Suggestion: Define the constant docking_station (create a class)

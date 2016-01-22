@@ -51,7 +51,7 @@ end
 describe DockingStation do
     describe 'initialization' do 
         subject { DockingStation.new } 
-            let(:bike) { Bike.new }
+            let(:bike) { double(:helloooooooo) }
             it 'defaults capacity' do 
                 described_class::DEFAULT_CAPACITY.times do 
                 subject.dock(bike)

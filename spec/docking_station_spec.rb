@@ -4,13 +4,15 @@ describe DockingStation do
 	bike = Bike.new
 	bike2 = Bike.new
 
-
+it 'check if there is a capacity' do
+expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+end
 
 	it "checks bike is working" do
 		expect(bike).to be_working
 	end
 	# unit test only works when .empty? method is not private
-	# describe "#empty?" do   
+	# describe "#empty?" do
 	# 	it {is_expected.to respond_to :empty?}
 	# end
 

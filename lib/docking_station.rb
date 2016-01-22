@@ -3,8 +3,9 @@ require './lib/bike.rb'
 class DockingStation
 
 	DEFAULT_CAPACITY = 20
-
-	def initialize
+	attr_reader :capacity
+	def initialize (k = DEFAULT_CAPACITY)
+		@capacity = k
 		@bikes = []
 	end
 

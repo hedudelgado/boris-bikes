@@ -61,6 +61,18 @@ describe DockingStation do
     end
 end
 
+# describe DockingStation do       I have to work on this to make it work!
+#   describe '#release_bike' do 
+#     it 'releases a bike' do
+#         bike = Bike.new
+#         bike.report_broken
+#         subject.dock(bike)
+#         it 'raises an error when the bike is broken' do 
+#             expect {subject.release_bike}.to raise_error 'No bikes' 
+#             end
+#         end
+#     end
+# end
 
 
 

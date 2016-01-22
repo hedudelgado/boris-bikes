@@ -9,6 +9,11 @@ describe DockingStation do
 	it "checks bike is working" do
 		expect(bike).to be_working
 	end
+	# unit test only works when .empty? method is not private
+	# describe "#empty?" do   
+	# 	it {is_expected.to respond_to :empty?}
+	# end
+
 
 
 
@@ -35,8 +40,8 @@ describe DockingStation do
 		end
 
 		it "allows us to dock 20 bikes before an error is raised" do
-			20.times { subject.dock(Bike.new) }
-			expect {subject.dock(Bike.new)}.to raise_error("warning 20 bikes already docked")
+			DockingStation::DEFAULT_CAPACITY.times { subject.dock(Bike.new) }
+			expect {subject.dock(Bike.new)}.to raise_error("warning #{DockingStation::DEFAULT_CAPACITY} bikes already docked")
 		end
 	end
 end

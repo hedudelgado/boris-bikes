@@ -17,14 +17,14 @@ class DockingStation
 	end
 
 	def dock(bike)
-		fail "warning " + DEFAULT_CAPACITY.to_s + " bikes already docked" if full?
+		fail "warning " + @capacity.to_s + " bikes already docked" if full?
 		@bikes.push(bike)
 	end
 
 private
 
 	def full?
-		@bikes.count >= DEFAULT_CAPACITY
+		@bikes.count >= @capacity
 	end
 
 	def empty?

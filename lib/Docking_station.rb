@@ -1,11 +1,10 @@
 require_relative 'Bike'
 
-#estoy en chapter 18 sin empezar y hasta ahora todo funcionando
 
 class DockingStation
    DEFAULT_CAPACITY = 20
 
-   attr_reader :capacity
+   attr_reader :capacity, :bike
    
 
    def initialize(capacity=DEFAULT_CAPACITY)
@@ -14,26 +13,23 @@ class DockingStation
    end
 
    def release_bike 
-   		if empty? then raise 'No bikes' else @bike.pop end
-   		#if empty?
-   		#	raise 'No bikes'
-   		#else
-   		#	@bike.pop
-   		#end
+   		if empty? or @bike.last.working? == false then raise 'No bikes' else @bike.pop end
+   		# if empty? or @bike.pop.broken? == true
+   		# 	raise 'No bikes'
+     #     else
+   		#     @bike.pop
+     #     end
+     
    end
 
    def dock(bike)
    		if full? then raise 'Station Full' else @bike << bike end
-   		#if full? 
-   		#	raise 'Station Full'
-   		#else
-   		#	@bike << bike
-   		#end
+
    end
    
    private
 
-    attr_reader :bike
+    #attr_reader :bike
 
     
     def full?
@@ -42,9 +38,10 @@ class DockingStation
    	end
    	
    	def empty?
-   		return true if bike.size == 0
-   		false
-   	end
+   		if bike.size == 0 then return true else false end
+
+    end
+   
 
 end
 

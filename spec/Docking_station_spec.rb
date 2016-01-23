@@ -1,8 +1,6 @@
 require 'Docking_station'
 
 
-#estoy en chapter 18 sin empezar y hasta ahora todo funcionando
-
 describe DockingStation do
     it {is_expected.to respond_to :release_bike}
 end
@@ -10,11 +8,14 @@ end
 describe DockingStation do
   describe '#release_bike' do 
     it 'releases a bike' do
-        bike = double(:helloooooooo)
-        subject.dock(bike)
-        expect(subject.release_bike).to eq bike
+    	station = described_class.new
+    	bike = double(:bike)
+    	allow(bike).to receive(:working?).and_return(true)
+        
+        station.dock(bike)
+        expect(station.release_bike).to eq bike
         end
-        it 'raises an error when there are no bikes available' do 
+        it 'raises an error when there are no bikes available or the bike is broken' do 
             expect {subject.release_bike}.to raise_error 'No bikes' 
         end
     end
